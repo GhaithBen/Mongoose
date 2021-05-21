@@ -4,7 +4,7 @@ const connectDB = require("./config/connectDB");
 mongoose.set("useFindAndModify", false);
 connectDB();
 
-/* const person = new Person({
+const person = new Person({
     _id: 1,
     name: "Jhon Snow",
     age: "28",
@@ -34,8 +34,8 @@ Person.create(
     (err) => {
         if (err) return console.log(err); // saved
     }
-); */
-/* Person.find({}, (err, data) => {
+); 
+Person.find({}, (err, data) => {
     err
         ? console.log("there is and error", err)
         : console.log("this is the data: ", data);
@@ -65,9 +65,9 @@ var findEditThenSave = function (personId) {
     });
 };
 
-findEditThenSave(1); */
+findEditThenSave(1); 
 
-/* var findAndUpdate = function (personName, doc) {
+var findAndUpdate = function (personName, doc) {
     var ageToSet = 20;
 
     Person.findOneAndUpdate(
@@ -84,8 +84,8 @@ findEditThenSave(1); */
 };
 
 findAndUpdate("Jhon Snow");
- */
-/* var user_id = 1;
+ 
+var user_id = 1;
 Person.findByIdAndRemove(user_id, function (err, docs) {
     if (err) {
         console.log(err);
@@ -101,7 +101,7 @@ Person.remove({ name: "Mary" }, function (err, result) {
         console.log("Result :", result);
     }
 });
- */
+ 
 var queryChain = function () {
     const foodToSearch = "burritos";
     Person.find({ favoriteFoods: foodToSearch })
